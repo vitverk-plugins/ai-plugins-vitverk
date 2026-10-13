@@ -17,8 +17,9 @@ Call get_instance when available and verify the returned origin before using oth
 check accessible workspace, website-project and resource metadata as available and consented.
 Start workspace discovery with list_workspaces({}). For paginated checks, omit limit
 to use the default page size and follow nextCursor until absent.
-Do not read document contents or run reports during setup. If connected, say so briefly and offer
-useful next actions; reuse that connection instead of starting another login.
+Keep these checks light: list resources for a few workspaces at a time rather than every workspace
+and category at once, and summarize the rest by name. Do not read document contents or run reports
+during setup. If connected, say so briefly; reuse that connection instead of starting another login.
 
 ## If tools are missing
 
@@ -50,7 +51,17 @@ page; restart only an expired or definitively failed request.
 
 Refresh discovery and repeat missing read-only checks. A successful authenticated tool result
 verifies access; browser approval alone does not. Preserve successful checks when another fails.
-Report the confirmed instance and useful available capabilities briefly. Mention a missing permission,
+Report the confirmed instance and useful available capabilities briefly.
+
+After a successful first setup, suggest two or three things to try next as prompts the user can send
+as written, each using something this connection actually reached. For example:
+- with company context: "Search Vitverk's context for <a topic from a collection's title> and summarize it";
+- with business data: "Show yesterday's sales by channel";
+- with a website project: "Make a small text change on <the project's site> and show me the preview";
+- with an enabled app's tools: "List my <the app's items>";
+- with workspaces only: "What apps do I have in <a workspace>?".
+Prefer safe, read-only first steps. Name real workspaces, collections, projects or apps from the
+checks; never invent them. Mention a missing permission,
 owner enablement or resource assignment only when it blocks the requested next action; do not present
 a long list of unchecked categories. Existing roles, reviews, hook enablement and promotion controls
 still apply. When blocked, state the concrete cause and next action instead of quoting this skill's
