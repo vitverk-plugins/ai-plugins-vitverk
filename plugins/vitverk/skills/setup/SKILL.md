@@ -20,15 +20,29 @@ to use the default page size and follow nextCursor until absent.
 Keep these checks light: list resources for a few workspaces at a time rather than every workspace
 and category at once, and summarize the rest by name. Do not read document contents or run reports
 during setup. If connected, say so briefly; reuse that connection instead of starting another login.
+Run these checks yourself in this conversation. Do not hand setup to a subagent: it reaches no more
+than you do, and its failure hides the cause.
 
 ## If tools are missing
 
-Check the installed plugin and its bundled MCP server through supported host/plugin diagnostics.
-A plugin can load skills while failing to load its server. Do not ask the user to authenticate a
-server you have not found.
+In the Claude desktop app or claude.ai chat, a plugin connector that is not connected yet offers no
+tools at all, which is the most common cause there. Ask the human to open
+**Customize → Plugins → Vitverk → Connectors** and tell you what the `vitverk` connector shows:
+- **Connect** or **Not added**: choose **Connect**, keep Claude's defaults in the dialog that opens
+  (**Sign in now** and **Use Claude's published identity**) and choose **Add**, then sign in to
+  https://vinnslan.vitverk.is, review access and choose **Connect**. Updating or reinstalling the plugin does not help here.
+- **Connected**: tools load only in a chat started after connecting, so ask them to send their
+  request again in a new chat. If tools are still missing there, the server is failing to load:
+  follow the recovery below.
+- No connector listed: the installed plugin is incomplete; follow the recovery below.
+
+Otherwise, and in Claude Code and Codex, check the installed plugin and its bundled MCP server
+through supported host/plugin diagnostics. A plugin can load skills while failing to load its server.
+Do not ask the user to authenticate a server you have not found.
 
 If the installed plugin resolves zero servers, refresh its marketplace and update that existing
-plugin using supported host controls when available. Do not add a separate MCP server or reinstall
+plugin using supported host controls when available (in Claude chat, **Customize → Plugins → Add →
+Manage marketplaces**, then **Check for updates**). Do not add a separate MCP server or reinstall
 another copy. Confirm server discovery after the update. If a host refresh or new chat is needed,
 ask only for that next action; do not give a sign-in checklist before the server is available.
 
