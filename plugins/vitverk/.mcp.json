@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vitverk": {
+      "type": "http",
+      "url": "https://vinnslan.vitverk.is/mcp"
+    }
+  }
+}

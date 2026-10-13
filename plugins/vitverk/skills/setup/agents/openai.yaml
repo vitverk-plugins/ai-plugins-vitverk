@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set up Vitverk"
+  short_description: "Sign in and check your Vitverk connection"
+  default_prompt: "Use $setup to check my Vitverk connection and help finish connecting if needed."

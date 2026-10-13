@@ -1,0 +1,20 @@
+{
+  "name": "vitverk",
+  "interface": {
+    "displayName": "Vitverk"
+  },
+  "plugins": [
+    {
+      "name": "vitverk",
+      "source": {
+        "source": "local",
+        "path": "./plugins/vitverk"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
