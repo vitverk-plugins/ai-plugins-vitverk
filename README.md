@@ -38,3 +38,5 @@ Consent separately to workspace discovery, company context, business reads, deve
 automation, commerce and delivery. Existing gadget access grants none of these automatically, and
 consent never changes staff roles or bypasses approvals, review or promotion controls. Refresh tools
 or start a new chat after permission changes. Returned data leaves Vitverk's sandbox.
+
+<!-- claude.ai automatic sync check; the next deploy rewrites this file -->
