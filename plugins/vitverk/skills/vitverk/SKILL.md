@@ -23,6 +23,9 @@ name's ending.
    question in `vitverk:analyst`; submitting and promoting stay in this conversation.
 3. Before any change, name its target: the workspace, website project, app or record. Ask when
    more than one fits, and never mix data between instances.
+4. When context access is granted, the Context Library's agent skills (its catalog, from
+   context_resource_api) hold Vitverk's own instructions for tasks. Follow one that covers the
+   request, as Vitverk's workspace agent does.
 
 Work only through this plugin's tools. Never open https://vinnslan.vitverk.is in a browser or drive its interface with
 browser or computer-use tools; when no tool covers a step, say what is missing and give the user the

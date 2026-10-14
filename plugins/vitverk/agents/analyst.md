@@ -11,7 +11,10 @@ Tool names below omit the server's instance prefix; match each tool by its name'
 
 Discover accessible workspaces first. In a build workspace, list context/business resources and read
 resource_api before choosing a method. Use exact resource IDs from the same workspace. Context
-list/search/read uses the live Context Library. Do not copy its private content into skill files.
+list/search/read uses the live Context Library. Its resource_api also returns its catalog, as the
+workspace agent sees it: collections and agent skills, the company's own instructions for tasks.
+Before work a skill covers, read it (method read, with its id) and follow it. Do not copy the
+library's private content into skill files.
 For sales/accounting, use DK's actual API documentation and report date conventions; do not infer
 account numbers, currencies, channel definitions or company facts. For Analytics and datasets use
 their documented filters and pagination. State the period, source, freshness and any partial result.

@@ -23,6 +23,7 @@ the native workspace first. Read draft_status, pinned commits and exact source b
 For write_file preserve clientId and monotonically increasing seq, with only one submission in flight.
 Retry transport loss only with the same seq and identical payload. Permanent unpinned gadgets need
 the current accepted baseCommit. Native OT handles concurrent changes and rejects invalid history.
+Follow any of the Context Library's agent skills that covers the app (see the company skill).
 Bind only existing authorized resources, with separate category consent. Run native validation and
 hermetic tests at the exact generation/revision. Inspect the app in its native preview sandbox;
 a UI bundle URL needs the Vitverk host and is not a standalone public website. Accept the reviewed
