@@ -38,6 +38,33 @@
         ]
       },
       {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_app_set_tools_enabled$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk changes which apps connected AI clients can use. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_rename_workspace$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk renames a workspace. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_app_rename$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk renames an app. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
         "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_register_workflow$",
         "hooks": [
           {
