@@ -20,6 +20,8 @@ Before writing or changing an app, read app_guide: Vitverk's own guide for its w
 deployment's instructions, and which tool here does what each agent tool it names does. Read its
 further topics as the work needs them rather than all at once, and read a platform library's
 declarations and documentation with app_library before using that library.
+Before building an app from scratch, check app_list_blueprints: start from a standard format or
+blueprint that fits (app_create with its blueprintId), then read its files and blueprintNotes.
 Use app_start_draft in an existing authorized build workspace, or in one made with create_workspace
 when the user asks for a new workspace, then app_create for a provisional app or edit an existing gadget. A null model prevents Vitverk's built-in editing agent from starting.
 Record returned IDs immediately. Never automatically replay interrupted draft/app creation; inspect
