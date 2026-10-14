@@ -29,6 +29,15 @@
         ]
       },
       {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_app_revert_draft$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk undoes app draft changes. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
         "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_register_workflow$",
         "hooks": [
           {
