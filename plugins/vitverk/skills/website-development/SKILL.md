@@ -11,6 +11,9 @@ Fetch private context live. Plugin files never confer permissions. Each capabili
 native consent at https://vinnslan.vitverk.is/external-access/mcp. Existing gadget consent grants none of these.
 Data returned to this chat leaves Vitverk's sandbox; Vitverk cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
+Work only through this connection's tools. Never open https://vinnslan.vitverk.is in a browser or drive its interface
+with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
+the link to do it there.
 
 List currently accessible website projects.
 Use start_website_session with a fresh request UUID, then status until ready. This external session
