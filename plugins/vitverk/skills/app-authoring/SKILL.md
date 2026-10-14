@@ -16,6 +16,10 @@ with browser or computer-use tools; when no tool covers a step, say what is miss
 the link to do it there.
 
 
+Before writing or changing an app, read app_guide: Vitverk's own guide for its workspace agent, this
+deployment's instructions, and which tool here does what each agent tool it names does. Read its
+further topics as the work needs them rather than all at once, and read a platform library's
+declarations and documentation with app_library before using that library.
 Use app_start_draft in an existing authorized build workspace, or in one made with create_workspace
 when the user asks for a new workspace, then app_create for a provisional app or edit an existing gadget. A null model prevents Vitverk's built-in editing agent from starting.
 Record returned IDs immediately. Never automatically replay interrupted draft/app creation; inspect
