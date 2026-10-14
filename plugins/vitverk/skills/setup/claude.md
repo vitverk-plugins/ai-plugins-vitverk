@@ -8,7 +8,10 @@ Each Claude surface keeps its own sign-in, and each is a separate connection in 
 The plugin's server is listed in `/mcp` as `plugin:vitverk:vitverk`. When it needs
 authentication, use a supported authenticate action for that server if one is available to you.
 Otherwise ask the human to enter `/mcp`, select that server and choose **Authenticate**, then
-complete sign-in in the browser. Verify with get_instance afterwards.
+complete sign-in in the browser. Verify with get_instance afterwards. In the desktop app's Code tab
+too, sign in through `/mcp`: the app's connector settings keep a separate sign-in that Code
+sessions do not use, so a connection made there can show as connected while this server still asks
+for authentication.
 
 If the server is missing, ask the human to check the Vitverk plugin under `/plugin` and run
 `/reload-plugins`, or update the plugin from its marketplace. Do not add a second server with
