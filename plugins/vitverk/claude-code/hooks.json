@@ -20,6 +20,15 @@
         ]
       },
       {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_website_take_over$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk moves one of your website sessions to this connection. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
         "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_app_accept$",
         "hooks": [
           {
