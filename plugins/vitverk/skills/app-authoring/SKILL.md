@@ -29,9 +29,12 @@ Retry transport loss only with the same seq and identical payload. Permanent unp
 the current accepted baseCommit. Native OT handles concurrent changes and rejects invalid history.
 Follow any of the Context Library's agent skills that covers the app (see the company skill).
 Bind only existing authorized resources, with separate category consent. Run native validation and
-hermetic tests at the exact generation/revision. Inspect the app in its native preview sandbox;
-a UI bundle URL needs the Vitverk host and is not a standalone public website. Accept the reviewed
-position through app_accept; conflicts and native validation remain authoritative.
+hermetic tests at the exact generation/revision. See the app yourself with app_inspect, at phone
+and desktop sizes, taking steps to try it: it returns a screenshot, the page outline and the logs.
+Give the user app_preview's previewUrl to open it signed in; never open Vitverk in a browser yourself.
+Seeing an accepted app, or a draft bound to live data, needs outputs consent, and steps in one act on
+live data: ask the user before passing acceptEffects. Accept the reviewed position through
+app_accept; conflicts and native validation remain authoritative.
 Output access requires outputs consent. List export formats, then export accepted output contents.
 Inline exports are bounded; use the native output link for larger files.
 Persistent schedules and portal tools use register_workflow with the accepted callback gadget's
