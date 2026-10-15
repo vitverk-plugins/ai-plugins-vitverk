@@ -81,6 +81,51 @@
             "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk registers a persistent workflow. Confirm before it runs.\"}}'"
           }
         ]
+      },
+      {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_site_publish$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk registers a public site for an app. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_site_turn_on$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk turns a site on, making its workspace public. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_site_go_live$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk takes a site live at its own address. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_site_make_private$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk takes a site off its own address. Confirm before it runs.\"}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_site_new_link$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk replaces the private link of a site. Confirm before it runs.\"}}'"
+          }
+        ]
       }
     ]
   }
