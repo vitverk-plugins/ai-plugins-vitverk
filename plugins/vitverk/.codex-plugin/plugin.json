@@ -1,7 +1,7 @@
 {
   "name": "vitverk",
-  "version": "0.1.0+bundle.3a990677b85a",
-  "description": "Vitverk: company context, apps and website development at vinnslan.vitverk.is, each with separately consented permissions.",
+  "version": "0.1.0+bundle.9b3eefa49754",
+  "description": "Vitverk: company context, apps and website development at os.vitverk.is, each with separately consented permissions.",
   "author": {
     "name": "Vitverk"
   },
@@ -15,14 +15,14 @@
   "interface": {
     "displayName": "Vitverk",
     "shortDescription": "Company tools, apps and website development.",
-    "longDescription": "Vitverk: company context, apps and website development at vinnslan.vitverk.is, each with separately consented permissions. One connection follows enabled and shared gadgets. Context, business data, development, outputs, automation, commerce and delivery each require separate native consent. Existing roles, approvals and reviews still apply.",
+    "longDescription": "Vitverk: company context, apps and website development at os.vitverk.is, each with separately consented permissions. One connection follows enabled and shared gadgets. Context, business data, development, outputs, automation, commerce and delivery each require separate native consent. Existing roles, approvals and reviews still apply.",
     "developerName": "Vitverk",
     "category": "Productivity",
     "capabilities": [
       "Read",
       "Write"
     ],
-    "websiteURL": "https://vinnslan.vitverk.is/external-access/mcp",
+    "websiteURL": "https://os.vitverk.is/external-access/mcp",
     "composerIcon": "./assets/logo.svg",
     "logo": "./assets/logo.svg",
     "logoDark": "./assets/logo-dark.svg",

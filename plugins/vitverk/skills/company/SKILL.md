@@ -5,13 +5,13 @@ description: Read live Vitverk context, DK reports, Analytics and operational da
 
 # Vitverk — company
 
-Use only this plugin's Vitverk connection, MCP server `vitverk` at https://vinnslan.vitverk.is/mcp.
+Use only this plugin's Vitverk connection, MCP server `vitverk` at https://os.vitverk.is/mcp.
 Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Fetch private context live. Plugin files never confer permissions. Each capability requires separate
-native consent at https://vinnslan.vitverk.is/external-access/mcp. Existing gadget consent grants none of these.
+native consent at https://os.vitverk.is/external-access/mcp. Existing gadget consent grants none of these.
 Data returned to this chat leaves Vitverk's sandbox; Vitverk cannot restrict its subsequent use.
 Never put operational data, private documents, tokens or infrastructure credentials in this package.
-Work only through this connection's tools. Never open https://vinnslan.vitverk.is in a browser or drive its interface
+Work only through this connection's tools. Never open https://os.vitverk.is in a browser or drive its interface
 with browser or computer-use tools; when no tool covers a step, say what is missing and give the user
 the link to do it there.
 

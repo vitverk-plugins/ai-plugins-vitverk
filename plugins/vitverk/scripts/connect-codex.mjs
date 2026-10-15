@@ -1,4 +1,4 @@
-const config = {"origin":"https://vinnslan.vitverk.is","server":"vitverk","pluginId":"vitverk@vitverk","helpUrl":"https://vinnslan.vitverk.is/external-access/mcp/connect?method=manual","rpcTimeoutMs":30000,"loginTimeoutMs":300000};
+const config = {"origin":"https://os.vitverk.is","server":"vitverk","pluginId":"vitverk@vitverk","helpUrl":"https://os.vitverk.is/external-access/mcp/connect?method=manual","rpcTimeoutMs":30000,"loginTimeoutMs":300000};
 
 import {spawn} from 'node:child_process';
 import {access, lstat, mkdir, open, unlink} from 'node:fs/promises';

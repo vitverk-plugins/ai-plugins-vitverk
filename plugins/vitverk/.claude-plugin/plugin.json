@@ -1,12 +1,12 @@
 {
   "name": "vitverk",
   "displayName": "Vitverk",
-  "version": "0.1.0+bundle.3a990677b85a",
-  "description": "Vitverk: company context, apps and website development at vinnslan.vitverk.is, each with separately consented permissions.",
+  "version": "0.1.0+bundle.9b3eefa49754",
+  "description": "Vitverk: company context, apps and website development at os.vitverk.is, each with separately consented permissions.",
   "author": {
     "name": "Vitverk"
   },
-  "homepage": "https://vinnslan.vitverk.is/external-access/mcp",
+  "homepage": "https://os.vitverk.is/external-access/mcp",
   "repository": "https://github.com/vitverk-plugins/ai-plugins-vitverk",
   "keywords": [
     "vitverk",

@@ -8,7 +8,7 @@ if [ -z "$plugin_codex" ]; then
   done
 fi
 if [ -z "$plugin_codex" ]; then printf 'Install Codex first, then reopen this sign-in launcher.\n' >&2; exit 1; fi
-printf 'Signing Codex in to %s\nKeep this window open. In your browser, sign in and click Connect.\nIf no browser opens, use the authorization URL printed below.\n' 'https://vinnslan.vitverk.is'
+printf 'Signing Codex in to %s\nKeep this window open. In your browser, sign in and click Connect.\nIf no browser opens, use the authorization URL printed below.\n' 'https://os.vitverk.is'
 plugin_status=0
 "$plugin_codex" mcp login 'vitverk' --oauth-client-registration dcr || plugin_status=$?
 if [ "$plugin_status" -eq 0 ]; then

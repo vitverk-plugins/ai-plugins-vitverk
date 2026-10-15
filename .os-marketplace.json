@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "origin": "https://vinnslan.vitverk.is",
+  "origin": "https://os.vitverk.is",
   "plugin": "vitverk",
   "files": [
     ".agents/plugins/marketplace.json",

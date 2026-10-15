@@ -3,7 +3,7 @@ set -eu
 umask 077
 plugin_source=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
 plugin_name='vitverk'
-printf 'Installing the plugin for %s\n' 'https://vinnslan.vitverk.is'
+printf 'Installing the plugin for %s\n' 'https://os.vitverk.is'
 plugin_client=codex
 if [ "$#" -gt 0 ]; then plugin_client="$1"; fi
 case "$plugin_client" in codex|claude) ;; *) printf 'Choose codex or claude.\n' >&2; exit 1;; esac
@@ -31,18 +31,18 @@ else
     exit 1
   fi
 fi
-plugin_home=$(printenv VINNSLAN_PLUGIN_HOME || true)
-if [ -z "$plugin_home" ]; then plugin_home="$HOME/.local/share/vinnslan/plugins"; fi
+plugin_home=$(printenv VITVERK_PLUGIN_HOME || true)
+if [ -z "$plugin_home" ]; then plugin_home="$HOME/.local/share/vitverk/plugins"; fi
 plugin_target="$plugin_home/$plugin_name"
 mkdir -p "$plugin_home"
 if [ -e "$plugin_target" ] || [ -L "$plugin_target" ]; then
-  if [ -L "$plugin_target" ] || [ ! -f "$plugin_target/.vinnslan-installer" ] || [ "$(cat "$plugin_target/.vinnslan-installer")" != "$plugin_name" ]; then
+  if [ -L "$plugin_target" ] || [ ! -f "$plugin_target/.vitverk-installer" ] || [ "$(cat "$plugin_target/.vitverk-installer")" != "$plugin_name" ]; then
     printf 'Refusing to replace an unmanaged folder: %s\n' "$plugin_target" >&2
     exit 1
   fi
 else
   mkdir "$plugin_target"
-  printf '%s\n' "$plugin_name" > "$plugin_target/.vinnslan-installer"
+  printf '%s\n' "$plugin_name" > "$plugin_target/.vitverk-installer"
 fi
 for plugin_path in .agents .claude-plugin plugins README.md "Sign in to Codex.command"; do
   if [ -L "$plugin_target/$plugin_path" ]; then printf 'Refusing a linked installation folder.\n' >&2; exit 1; fi

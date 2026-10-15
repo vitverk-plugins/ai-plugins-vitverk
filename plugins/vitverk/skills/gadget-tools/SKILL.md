@@ -5,7 +5,7 @@ description: Use this plugin's granted gadget (app) MCP tools to read and update
 
 # Gadget tools
 
-This plugin connects only to https://vinnslan.vitverk.is/mcp through Vitverk's MCP server named `vitverk`.
+This plugin connects only to https://os.vitverk.is/mcp through Vitverk's MCP server named `vitverk`.
 When several instances are connected, identify the target instance before a write.
 If the intended instance is unclear, ask the user; do not guess or mix data between instances.
 

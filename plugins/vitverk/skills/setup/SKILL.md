@@ -5,7 +5,7 @@ description: Set up or diagnose the Vitverk plugin, sign in when needed, and ver
 
 # Set up Vitverk
 
-This is the Vitverk plugin. It targets only https://vinnslan.vitverk.is/mcp, with MCP server name `vitverk`.
+This is the Vitverk plugin. It targets only https://os.vitverk.is/mcp, with MCP server name `vitverk`.
 Tool names below omit the server's instance prefix; match each tool by its name's ending.
 A setup request authorizes connection checks and starting sign-in, not choosing permissions,
 reading private document contents, changing customer data or granting additional access.
@@ -30,7 +30,7 @@ tools at all, which is the most common cause there. Ask the human to open
 **Customize → Plugins → Vitverk → Connectors** and tell you what the `vitverk` connector shows:
 - **Connect** or **Not added**: choose **Connect**, keep Claude's defaults in the dialog that opens
   (**Sign in now** and **Use Claude's published identity**) and choose **Add**, then sign in to
-  https://vinnslan.vitverk.is, review access and choose **Connect**. Updating or reinstalling the plugin does not help here.
+  https://os.vitverk.is, review access and choose **Connect**. Updating or reinstalling the plugin does not help here.
 - **Connected**: tools load only in a chat started after connecting, so ask them to send their
   request again in a new chat. If tools are still missing there, the server is failing to load:
   follow the recovery below.
@@ -53,7 +53,7 @@ Follow the instructions for the client you are running in:
 - Codex (the ChatGPT desktop app or the Codex CLI): [codex.md](codex.md)
 - Claude (Claude Code, the Claude desktop app or claude.ai): [claude.md](claude.md)
 
-Ask the human to complete account sign-in and review permissions on https://vinnslan.vitverk.is. This does not prevent
+Ask the human to complete account sign-in and review permissions on https://os.vitverk.is. This does not prevent
 you from initiating login, checking status or finishing the remaining setup. Request only the user
 action currently needed; keep permission selection and the final Connect click with them. Explain
 only permissions relevant to their intended work. Returned data leaves Vitverk's sandbox.

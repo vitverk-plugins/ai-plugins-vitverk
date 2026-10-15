@@ -4,13 +4,13 @@
     "name": "Vitverk"
   },
   "metadata": {
-    "description": "Vitverk: company context, apps and website development at vinnslan.vitverk.is, each with separately consented permissions."
+    "description": "Vitverk: company context, apps and website development at os.vitverk.is, each with separately consented permissions."
   },
   "plugins": [
     {
       "name": "vitverk",
       "source": "./plugins/vitverk",
-      "description": "Vitverk: company context, apps and website development at vinnslan.vitverk.is, each with separately consented permissions."
+      "description": "Vitverk: company context, apps and website development at os.vitverk.is, each with separately consented permissions."
     }
   ]
 }

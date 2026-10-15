@@ -24,7 +24,7 @@ If the host exposes only a connection control, guide the user to that installed 
 Connect/Authenticate control, using the actual displayed name.
 
 In Codex desktop, when the installed plugin and bundled endpoint are verified but this chat cannot
-use its tools or operate connection controls, open [Finish connecting Codex](https://vinnslan.vitverk.is/external-access/mcp/connect?method=manual)
+use its tools or operate connection controls, open [Finish connecting Codex](https://os.vitverk.is/external-access/mcp/connect?method=manual)
 in the built-in browser when no supported login action or helper is available. Use an available
 browser-opening tool such as open_in_codex with a browser URL target; reuse this instance's tab when possible. This dedicated page shows only the connection steps.
 Give one concrete next action: click [Open Codex settings](codex://settings), choose **MCP servers**,

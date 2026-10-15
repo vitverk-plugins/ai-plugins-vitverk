@@ -21,9 +21,9 @@ If the server is missing, ask the human to check the Vitverk plugin under `/plug
 
 Plugins are under **Customize → Plugins**. Open **Vitverk**, then its **Connectors** tab, and
 choose **Connect**. Keep the dialog's defaults (**Sign in now** and
-**Use Claude's published identity**) and choose **Add**. In the browser, sign in to https://vinnslan.vitverk.is,
+**Use Claude's published identity**) and choose **Add**. In the browser, sign in to https://os.vitverk.is,
 review access and choose **Connect**. Tools load in a new chat. A connector added separately under **Customize → Connectors** for the
 same address is a second connection; prefer the plugin's own.
 
-If the human needs the steps on screen, share [Finish connecting Claude](https://vinnslan.vitverk.is/external-access/mcp/connect?client=claude&method=manual).
+If the human needs the steps on screen, share [Finish connecting Claude](https://os.vitverk.is/external-access/mcp/connect?client=claude&method=manual).
 Opening this help page does not start OAuth.

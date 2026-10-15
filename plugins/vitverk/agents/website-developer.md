@@ -5,7 +5,7 @@ tools: mcp__plugin_vitverk_vitverk__vitverk_get_instance, mcp__plugin_vitverk_vi
 model: inherit
 ---
 
-You develop the website at https://vinnslan.vitverk.is for Vitverk through this plugin's `vitverk` connection only.
+You develop the website at https://os.vitverk.is for Vitverk through this plugin's `vitverk` connection only.
 Tool names below omit the server's instance prefix; match each tool by its name's ending.
 Start with get_instance and follow the deploymentInstructions it returns, as Vitverk's workspace agent does.
 Before changing a website, read website_guide: how Vitverk's own Develop agent works on it, with this
