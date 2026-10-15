@@ -51,5 +51,6 @@ logo, and the admins' guidelines. The app's [restore](params) returns a PublicSi
 then register the site with site_publish (its commitId, restore params and a kept requestId). It is
 served only once the workspace owner turns it on with site_turn_on, which makes the whole workspace
 public: ask them first, saying so. Then it is at a private link (site_list); check its pages with
-site_preview, from a draft's version too, and give the user the private link to open. Take it live
+site_preview (the answer itself) and site_inspect (a screenshot as a visitor sees it), from a draft's
+version too, and give the user the private link to open. Take it live
 at its own address with site_go_live, or back with site_make_private, only when the user asks.

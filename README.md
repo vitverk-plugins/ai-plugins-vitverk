@@ -20,8 +20,8 @@ Connection help: https://os.vitverk.is/external-access/mcp/connect?client=claude
 
 ## Codex
 
-Open **Plugins → Add marketplace**, add https://github.com/vitverk-plugins/ai-plugins-vitverk, install **Vitverk**, and run its setup
-skill. If connecting needs help, open https://os.vitverk.is/external-access/mcp/connect, choose **Copy setup prompt**
+Copy https://github.com/vitverk-plugins/ai-plugins-vitverk, open **Plugins → Add marketplace** and paste it. On the **Personal** tab, install
+**Vitverk**, then run its setup skill. If connecting needs help, open https://os.vitverk.is/external-access/mcp/connect, choose **Copy setup prompt**
 and send it in a Codex chat, or use https://os.vitverk.is/external-access/mcp/connect?method=manual for the Settings steps.
 An agent with Node.js and the Codex CLI can check the connection with
 `node plugins/vitverk/scripts/connect-codex.mjs --check`, and only after `authentication_required`
