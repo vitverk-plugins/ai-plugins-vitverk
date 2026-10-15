@@ -1,78 +1,78 @@
 #!/bin/sh
 set -eu
 umask 077
-vinnslan_source=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
-vinnslan_name='vitverk'
-printf 'Installing Vinnslan for %s\n' 'https://vinnslan.vitverk.is'
-vinnslan_client=codex
-if [ "$#" -gt 0 ]; then vinnslan_client="$1"; fi
-case "$vinnslan_client" in codex|claude) ;; *) printf 'Choose codex or claude.\n' >&2; exit 1;; esac
-if [ "$vinnslan_client" = codex ]; then
-vinnslan_codex=$(command -v codex || true)
-if [ -z "$vinnslan_codex" ]; then
-  for vinnslan_app in /Applications/ChatGPT.app /Applications/Codex.app "$HOME/Applications/ChatGPT.app" "$HOME/Applications/Codex.app"; do
-    if [ -x "$vinnslan_app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex" ]; then vinnslan_codex="$vinnslan_app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"; break; fi
-    if [ -x "$vinnslan_app/Contents/Resources/codex" ]; then
-      vinnslan_codex="$vinnslan_app/Contents/Resources/codex"
+plugin_source=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+plugin_name='vitverk'
+printf 'Installing the plugin for %s\n' 'https://vinnslan.vitverk.is'
+plugin_client=codex
+if [ "$#" -gt 0 ]; then plugin_client="$1"; fi
+case "$plugin_client" in codex|claude) ;; *) printf 'Choose codex or claude.\n' >&2; exit 1;; esac
+if [ "$plugin_client" = codex ]; then
+plugin_codex=$(command -v codex || true)
+if [ -z "$plugin_codex" ]; then
+  for plugin_app in /Applications/ChatGPT.app /Applications/Codex.app "$HOME/Applications/ChatGPT.app" "$HOME/Applications/Codex.app"; do
+    if [ -x "$plugin_app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex" ]; then plugin_codex="$plugin_app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"; break; fi
+    if [ -x "$plugin_app/Contents/Resources/codex" ]; then
+      plugin_codex="$plugin_app/Contents/Resources/codex"
       break
     fi
   done
 fi
-if [ -z "$vinnslan_codex" ]; then
+if [ -z "$plugin_codex" ]; then
   printf 'Codex was not found. Install Codex first, then run this installer again.\nhttps://learn.chatgpt.com/docs/cli\n' >&2
   exit 1
 fi
-vinnslan_cli="$vinnslan_codex"
+plugin_cli="$plugin_codex"
 else
-  vinnslan_cli=$(command -v claude || true)
-  if [ -z "$vinnslan_cli" ] && [ -x "$HOME/.local/bin/claude" ]; then vinnslan_cli="$HOME/.local/bin/claude"; fi
-  if [ -z "$vinnslan_cli" ]; then
+  plugin_cli=$(command -v claude || true)
+  if [ -z "$plugin_cli" ] && [ -x "$HOME/.local/bin/claude" ]; then plugin_cli="$HOME/.local/bin/claude"; fi
+  if [ -z "$plugin_cli" ]; then
     printf 'Claude Code was not found. Install Claude Code first, then run this installer again.\nhttps://code.claude.com/docs/en/setup\n' >&2
     exit 1
   fi
 fi
-vinnslan_home=$(printenv VINNSLAN_PLUGIN_HOME || true)
-if [ -z "$vinnslan_home" ]; then vinnslan_home="$HOME/.local/share/vinnslan/plugins"; fi
-vinnslan_target="$vinnslan_home/$vinnslan_name"
-mkdir -p "$vinnslan_home"
-if [ -e "$vinnslan_target" ] || [ -L "$vinnslan_target" ]; then
-  if [ -L "$vinnslan_target" ] || [ ! -f "$vinnslan_target/.vinnslan-installer" ] || [ "$(cat "$vinnslan_target/.vinnslan-installer")" != "$vinnslan_name" ]; then
-    printf 'Refusing to replace an unmanaged folder: %s\n' "$vinnslan_target" >&2
+plugin_home=$(printenv VINNSLAN_PLUGIN_HOME || true)
+if [ -z "$plugin_home" ]; then plugin_home="$HOME/.local/share/vinnslan/plugins"; fi
+plugin_target="$plugin_home/$plugin_name"
+mkdir -p "$plugin_home"
+if [ -e "$plugin_target" ] || [ -L "$plugin_target" ]; then
+  if [ -L "$plugin_target" ] || [ ! -f "$plugin_target/.vinnslan-installer" ] || [ "$(cat "$plugin_target/.vinnslan-installer")" != "$plugin_name" ]; then
+    printf 'Refusing to replace an unmanaged folder: %s\n' "$plugin_target" >&2
     exit 1
   fi
 else
-  mkdir "$vinnslan_target"
-  printf '%s\n' "$vinnslan_name" > "$vinnslan_target/.vinnslan-installer"
+  mkdir "$plugin_target"
+  printf '%s\n' "$plugin_name" > "$plugin_target/.vinnslan-installer"
 fi
-for vinnslan_path in .agents .claude-plugin plugins README.md "Sign in to Codex.command"; do
-  if [ -L "$vinnslan_target/$vinnslan_path" ]; then printf 'Refusing a linked installation folder.\n' >&2; exit 1; fi
+for plugin_path in .agents .claude-plugin plugins README.md "Sign in to Codex.command"; do
+  if [ -L "$plugin_target/$plugin_path" ]; then printf 'Refusing a linked installation folder.\n' >&2; exit 1; fi
 done
-cp -R "$vinnslan_source/.agents" "$vinnslan_target/"
-cp -R "$vinnslan_source/.claude-plugin" "$vinnslan_target/"
-cp -R "$vinnslan_source/plugins" "$vinnslan_target/"
-cp "$vinnslan_source/README.md" "$vinnslan_target/README.md"
-cp "$vinnslan_source/Sign in to Codex.command" "$vinnslan_target/"
-if [ "$vinnslan_client" = codex ]; then
-  if [ ! -f "$vinnslan_target/.codex-registered" ]; then
-    "$vinnslan_cli" plugin marketplace add "$vinnslan_target"
-    : > "$vinnslan_target/.codex-registered"
+cp -R "$plugin_source/.agents" "$plugin_target/"
+cp -R "$plugin_source/.claude-plugin" "$plugin_target/"
+cp -R "$plugin_source/plugins" "$plugin_target/"
+cp "$plugin_source/README.md" "$plugin_target/README.md"
+cp "$plugin_source/Sign in to Codex.command" "$plugin_target/"
+if [ "$plugin_client" = codex ]; then
+  if [ ! -f "$plugin_target/.codex-registered" ]; then
+    "$plugin_cli" plugin marketplace add "$plugin_target"
+    : > "$plugin_target/.codex-registered"
   fi
-  "$vinnslan_cli" plugin add "$vinnslan_name@$vinnslan_name"
-printf '\nInstalled. Open this sign-in launcher to connect your account:\n%s/Sign in to Codex.command\n' "$vinnslan_target"
+  "$plugin_cli" plugin add "$plugin_name@$plugin_name"
+printf '\nInstalled. Open this sign-in launcher to connect your account:\n%s/Sign in to Codex.command\n' "$plugin_target"
 printf 'Then start a new Codex task. You can delete the extracted download.\n'
 else
-  if [ ! -f "$vinnslan_target/.claude-registered" ]; then
-    "$vinnslan_cli" plugin marketplace add "$vinnslan_target" --scope user
-    : > "$vinnslan_target/.claude-registered"
+  if [ ! -f "$plugin_target/.claude-registered" ]; then
+    "$plugin_cli" plugin marketplace add "$plugin_target" --scope user
+    : > "$plugin_target/.claude-registered"
   else
-    "$vinnslan_cli" plugin marketplace update "$vinnslan_name"
+    "$plugin_cli" plugin marketplace update "$plugin_name"
   fi
-  if [ -f "$vinnslan_target/.claude-plugin-installed" ]; then
-    "$vinnslan_cli" plugin update "$vinnslan_name@$vinnslan_name" --scope user
+  if [ -f "$plugin_target/.claude-plugin-installed" ]; then
+    "$plugin_cli" plugin update "$plugin_name@$plugin_name" --scope user
   else
-    "$vinnslan_cli" plugin install "$vinnslan_name@$vinnslan_name" --scope user
-    : > "$vinnslan_target/.claude-plugin-installed"
+    "$plugin_cli" plugin install "$plugin_name@$plugin_name" --scope user
+    : > "$plugin_target/.claude-plugin-installed"
   fi
-  printf '\nInstalled. Restart Claude Code, enter /mcp, select the plugin server containing %s, then choose Authenticate. In the browser, sign in and click Connect.\n' "$vinnslan_name"
+  printf '\nInstalled. Restart Claude Code, enter /mcp, select the plugin server containing %s, then choose Authenticate. In the browser, sign in and click Connect.\n' "$plugin_name"
 fi
-if [ -t 0 ]; then printf '\nPress Enter to close.'; read -r vinnslan_answer || true; fi
+if [ -t 0 ]; then printf '\nPress Enter to close.'; read -r plugin_answer || true; fi

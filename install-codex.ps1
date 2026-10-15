@@ -1,38 +1,38 @@
 $ErrorActionPreference = 'Stop'
 try {
-  $vinnslanName = 'vitverk'
-  Write-Host ('Installing Vinnslan for ' + 'https://vinnslan.vitverk.is')
-  $vinnslanCodex = Get-Command codex -ErrorAction SilentlyContinue
-  if (-not $vinnslanCodex) { throw 'Codex CLI was not found. Install Codex CLI, then run this installer again.' }
-  $vinnslanHome = $env:VINNSLAN_PLUGIN_HOME
-  if (-not $vinnslanHome) { $vinnslanHome = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'Vinnslan\Plugins' }
-  $vinnslanTarget = Join-Path $vinnslanHome $vinnslanName
-  $vinnslanMarker = Join-Path $vinnslanTarget '.vinnslan-installer'
-  if (Test-Path -LiteralPath $vinnslanTarget) {
-    $vinnslanItem = Get-Item -LiteralPath $vinnslanTarget
-    if (($vinnslanItem.Attributes -band [IO.FileAttributes]::ReparsePoint) -or -not (Test-Path -LiteralPath $vinnslanMarker) -or (Get-Content -LiteralPath $vinnslanMarker -Raw).Trim() -ne $vinnslanName) {
+  $pluginName = 'vitverk'
+  Write-Host ('Installing the plugin for ' + 'https://vinnslan.vitverk.is')
+  $pluginCodex = Get-Command codex -ErrorAction SilentlyContinue
+  if (-not $pluginCodex) { throw 'Codex CLI was not found. Install Codex CLI, then run this installer again.' }
+  $pluginHome = $env:VINNSLAN_PLUGIN_HOME
+  if (-not $pluginHome) { $pluginHome = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'Vinnslan\Plugins' }
+  $pluginTarget = Join-Path $pluginHome $pluginName
+  $pluginMarker = Join-Path $pluginTarget '.vinnslan-installer'
+  if (Test-Path -LiteralPath $pluginTarget) {
+    $pluginItem = Get-Item -LiteralPath $pluginTarget
+    if (($pluginItem.Attributes -band [IO.FileAttributes]::ReparsePoint) -or -not (Test-Path -LiteralPath $pluginMarker) -or (Get-Content -LiteralPath $pluginMarker -Raw).Trim() -ne $pluginName) {
       throw 'Refusing to replace an unmanaged installation folder.'
     }
   } else {
-    New-Item -ItemType Directory -Path $vinnslanTarget -Force | Out-Null
-    Set-Content -LiteralPath $vinnslanMarker -Value $vinnslanName
+    New-Item -ItemType Directory -Path $pluginTarget -Force | Out-Null
+    Set-Content -LiteralPath $pluginMarker -Value $pluginName
   }
-  foreach ($vinnslanPath in @('.agents', 'plugins', 'README.md', 'Sign in to Codex.cmd')) {
-    $vinnslanDestination = Join-Path $vinnslanTarget $vinnslanPath
-    if ((Test-Path -LiteralPath $vinnslanDestination) -and ((Get-Item -LiteralPath $vinnslanDestination).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+  foreach ($pluginPath in @('.agents', 'plugins', 'README.md', 'Sign in to Codex.cmd')) {
+    $pluginDestination = Join-Path $pluginTarget $pluginPath
+    if ((Test-Path -LiteralPath $pluginDestination) -and ((Get-Item -LiteralPath $pluginDestination).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
       throw 'Refusing a linked installation path.'
     }
-    Copy-Item -LiteralPath (Join-Path $PSScriptRoot $vinnslanPath) -Destination $vinnslanTarget -Recurse -Force
+    Copy-Item -LiteralPath (Join-Path $PSScriptRoot $pluginPath) -Destination $pluginTarget -Recurse -Force
   }
-  $vinnslanRegistered = Join-Path $vinnslanTarget '.codex-registered'
-  if (-not (Test-Path -LiteralPath $vinnslanRegistered)) {
-    & $vinnslanCodex.Source plugin marketplace add $vinnslanTarget
+  $pluginRegistered = Join-Path $pluginTarget '.codex-registered'
+  if (-not (Test-Path -LiteralPath $pluginRegistered)) {
+    & $pluginCodex.Source plugin marketplace add $pluginTarget
     if ($LASTEXITCODE -ne 0) { throw 'Codex catalog registration failed.' }
-    Set-Content -LiteralPath $vinnslanRegistered -Value $vinnslanName
+    Set-Content -LiteralPath $pluginRegistered -Value $pluginName
   }
-  & $vinnslanCodex.Source plugin add "$vinnslanName@$vinnslanName"
+  & $pluginCodex.Source plugin add "$pluginName@$pluginName"
   if ($LASTEXITCODE -ne 0) { throw 'Codex plugin installation failed.' }
-  Write-Host ('Installed. Open ' + (Join-Path $vinnslanTarget 'Sign in to Codex.cmd') + ' to sign in through your browser.')
+  Write-Host ('Installed. Open ' + (Join-Path $pluginTarget 'Sign in to Codex.cmd') + ' to sign in through your browser.')
   Write-Host 'Then start a new Codex task. You can delete the extracted download.'
 } catch {
   Write-Error $_ -ErrorAction Continue

@@ -37,7 +37,7 @@ async function findCodex() {
 
 // Ambiguous attempts survive process exit. Never replace an existing receipt automatically.
 async function pendingPath(create) {
-  const directory = join(tmpdir(), 'vinnslan-codex-connections-' + (process.getuid?.() ?? 'user'));
+  const directory = join(tmpdir(), 'codex-connections-' + (process.getuid?.() ?? 'user'));
   if (create) {
     try { await mkdir(directory, {mode: 0o700}); } catch (error) { if (error.code !== 'EEXIST') throw new Error('pending_receipt_unavailable'); }
   }
@@ -165,7 +165,7 @@ async function connect() {
     if (failure) finish(failure); else completionWait.notify();
   });
   try {
-    await request('initialize', {clientInfo: {name: 'vinnslan_connection_helper', title: 'Vinnslan connection helper', version: '1.0.0'}});
+    await request('initialize', {clientInfo: {name: 'connection_helper', title: 'Connection helper', version: '1.0.0'}});
     child.stdin.write(JSON.stringify({jsonrpc: '2.0', method: 'initialized'}) + '\n');
     const result = await request('mcpServerStatus/list', {serverName: config.server, detail: 'toolsAndAuthOnly'});
     if (!result || !Array.isArray(result.data)) throw new Error('unsupported_protocol');
