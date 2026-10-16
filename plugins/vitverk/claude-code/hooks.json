@@ -20,15 +20,6 @@
         ]
       },
       {
-        "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_website_approve$",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"vitverk approves this website change for merging. Confirm before it runs.\"}}'"
-          }
-        ]
-      },
-      {
         "matcher": "^mcp__plugin_vitverk_vitverk__vitverk_website_take_over$",
         "hooks": [
           {
