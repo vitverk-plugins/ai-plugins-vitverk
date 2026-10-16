@@ -19,10 +19,13 @@ If the server is missing, ask the human to check the Vitverk plugin under `/plug
 
 ## Claude desktop app and claude.ai chat
 
-Plugins are under **Customize → Plugins**. Open **Vitverk**, then its **Connectors** tab, and
-choose **Connect**. Keep the dialog's defaults (**Sign in now** and
-**Use Claude's published identity**) and choose **Add**. In the browser, sign in to https://os.vitverk.is,
-review access and choose **Connect**. Tools load in a new chat. A connector added separately under **Customize → Connectors** for the
+Plugins for chat are installed on the Claude account: at https://claude.ai/customize/plugins, or under
+**Customize → Plugins** in the desktop app's chat (not its Code tab, which installs into Claude Code).
+Open **Vitverk**, then its **Connectors** tab, and choose **Connect**. Keep the dialog's
+defaults (**Sign in now** and **Use Claude's published identity**) and choose **Add**; choose
+**Connect** again if the sign-in page does not open. In the browser, sign in to https://os.vitverk.is: the page
+asks to authorize Claude, and if it names Claude Code the plugin is in Claude Code's settings instead.
+Review access and choose **Connect**. Tools load in a new chat. A connector added separately under **Customize → Connectors** for the
 same address is a second connection; prefer the plugin's own.
 
 If the human needs the steps on screen, share [Finish connecting Claude](https://os.vitverk.is/external-access/mcp/connect?client=claude&method=manual).

@@ -7,12 +7,15 @@ Each instance has a distinct plugin, server and catalog name that stays stable a
 
 ## Claude
 
-In claude.ai or the Claude desktop app, open **Customize → Plugins → Add marketplace**, add
-https://github.com/vitverk-plugins/ai-plugins-vitverk, and install **Vitverk**. Open the plugin's **Connectors** tab, choose **Connect**,
-sign in to https://os.vitverk.is, review permissions and choose **Connect**. A plugin added there also loads in
-Claude Code. Then ask `/vitverk` or **Set up my Vitverk connection** in a new chat.
+Install it on your Claude account, at https://claude.ai/customize/plugins (in the desktop app: **Customize** in the
+chat, not the Code tab): choose **Add marketplace**, add https://github.com/vitverk-plugins/ai-plugins-vitverk, and install **Vitverk**.
+On its **Connectors** tab choose **Connect**, keep the dialog's defaults and choose **Add**; choose
+**Connect** again if the sign-in page does not open. Sign in to https://os.vitverk.is: the page asks you to
+authorize **Claude**, not Claude Code. Review permissions and choose **Connect**. The plugin then
+also loads in Claude Code as a synced plugin, so don't install a second copy there. Then ask
+`/vitverk` or **Set up my Vitverk connection** in a new chat.
 
-For Claude Code alone, run `/plugin marketplace add` with https://github.com/vitverk-plugins/ai-plugins-vitverk, then
+For Claude Code without claude.ai, run `/plugin marketplace add` with https://github.com/vitverk-plugins/ai-plugins-vitverk, then
 `/plugin install vitverk@vitverk`, and authenticate the server in `/mcp`. Without a repository,
 upload this instance's single-plugin ZIP in **Customize → Plugins**, or keep this extracted folder and
 run `claude plugin marketplace add . --scope user` and `claude plugin install vitverk@vitverk --scope user`.

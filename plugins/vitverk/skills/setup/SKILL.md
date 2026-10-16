@@ -27,10 +27,14 @@ than you do, and its failure hides the cause.
 
 In the Claude desktop app or claude.ai chat, a plugin connector that is not connected yet offers no
 tools at all, which is the most common cause there. Ask the human to open
-**Customize → Plugins → Vitverk → Connectors** and tell you what the `vitverk` connector shows:
+**Customize → Plugins → Vitverk → Connectors** (at https://claude.ai/customize/plugins, or in the desktop app's
+chat, not its Code tab) and tell you what the `vitverk` connector shows:
 - **Connect** or **Not added**: choose **Connect**, keep Claude's defaults in the dialog that opens
   (**Sign in now** and **Use Claude's published identity**) and choose **Add**, then sign in to
-  https://os.vitverk.is, review access and choose **Connect**. Updating or reinstalling the plugin does not help here.
+  https://os.vitverk.is, review access and choose **Connect**. If the sign-in page asks to authorize Claude Code,
+  or the connector stays **Not added** after connecting, the plugin was installed in Claude Code
+  rather than on the Claude account: install it at https://claude.ai/customize/plugins instead. Otherwise updating or
+  reinstalling the plugin does not help here.
 - **Connected**: tools load only in a chat started after connecting, so ask them to send their
   request again in a new chat. If tools are still missing there, the server is failing to load:
   follow the recovery below.
