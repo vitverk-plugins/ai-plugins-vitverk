@@ -38,6 +38,12 @@ changed file, including omitted/binary changes. Submit the exact
 checkoutRevision returned by changes, with the current session revision. Native automated review
 and PR checks still apply. Share the preview and PR for review. After submitting, follow it with
 website_status: its review findings to fix and submit again, the needsUser link when people must approve
-it (only they can), and once merged, where it is on its way to the live site. website_retry tries a
-failed setup or review again. Submission grants no promotion permission. Delivery tools require separate consent and the existing technical-admin group; inspect
-promotion_plan for the exact SHA and never bypass review or switch environments to avoid a gate.
+it (another technical admin does, never you), and once merged, where it is on its way to the live site.
+website_retry tries a failed setup or review again. Submission grants no promotion permission.
+Delivery tools are the Deployments page's, with separate consent and the existing technical-admin group:
+list_website_deployments names the websites (on the hub, other instances' too), website_pipeline and
+website_problem read them, and website_approve approves a colleague's change that waits for review,
+only when the user asks. Inspect promotion_plan for the exact SHA before website_promote, and never
+bypass review or switch environments to avoid a gate. On the hub, fleet_status and fleet_problem read
+the instance fleet. Only a person deploys instances: fleet_deploy_plan returns the needsUser link where
+one of the hub's deployment admins reviews and confirms the deploy; give the user that link.
